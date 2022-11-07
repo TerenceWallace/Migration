@@ -1,0 +1,47 @@
+﻿<GUIConfig>
+  <AtlasList>
+    <Atlas Name="atlas:RoundedButtomFrame">
+      <TileList>
+        <Tile Index="0" X="0" Y="0" Width="5" Height="5"/>
+        <Tile Index="1" X="5" Y="0" Width="9" Height="5"/>
+        <Tile Index="2" X="14" Y="0" Width="5" Height="5"/>
+        <Tile Index="3" X="14" Y="5" Width="5" Height="6"/>
+        <Tile Index="4" X="14" Y="11" Width="5" Height="5"/>
+        <Tile Index="5" X="5" Y="11" Width="9" Height="5"/>
+        <Tile Index="6" X="0" Y="11" Width="5" Height="5"/>
+        <Tile Index="7" X="0" Y="5" Width="5" Height="6"/>
+        <Tile Index="8" X="5" Y="5" Width="9" Height="6"/>
+      </TileList>
+    </Atlas>
+
+    <Atlas Name="atlas:EdgedButtomFrame">
+      <TileList>
+        <Tile Index="0" X="0" Y="0" Width="3" Height="3"/>
+        <Tile Index="1" X="3" Y="0" Width="13" Height="3"/>
+        <Tile Index="2" X="16" Y="0" Width="3" Height="3"/>
+        <Tile Index="3" X="16" Y="3" Width="3" Height="10"/>
+        <Tile Index="4" X="16" Y="13" Width="3" Height="3"/>
+        <Tile Index="5" X="3" Y="13" Width="13" Height="3"/>
+        <Tile Index="6" X="0" Y="13" Width="3" Height="3"/>
+        <Tile Index="7" X="0" Y="3" Width="3" Height="10"/>
+        <Tile Index="8" X="3" Y="3" Width="13" Height="10"/>
+      </TileList>
+    </Atlas>
+  </AtlasList>
+  
+  <FrameList>
+    <Frame Name="frame:EdgedButtonDown" Atlas="atlas:EdgedButtomFrame" Image="Frames/EdgedButtonDownFrame.png"/>
+    <Frame Name="frame:EdgedButton" Atlas="atlas:EdgedButtomFrame" Image="Frames/EdgedButtonFrame.png"/>
+    
+    <Frame Name="frame:RoundedButton" Atlas="atlas:RoundedButtomFrame" Image="Frames/RoundedButton.png"/>
+    <Frame Name="frame:RoundedButtonOver" Atlas="atlas:RoundedButtomFrame" Image="Frames/RoundedButtonOver.png"/>
+    <Frame Name="frame:RoundedButtonDown" Atlas="atlas:RoundedButtomFrame" Image="Frames/RoundedButtonDown.png"/>
+    <Frame Name="frame:RoundedButtonDownOver" Atlas="atlas:RoundedButtomFrame" Image="Frames/RoundedButtonDownOver.png"/>
+    <Frame Name="frame:RoundedButtonDisabled" Atlas="atlas:RoundedButtomFrame" Image="Frames/RoundedButtonDisabled.png"/>
+    <Frame Name="frame:RoundedButtonDownDisabled" Atlas="atlas:RoundedButtomFrame" Image="Frames/RoundedButtonDownDisabled.png"/>
+  </FrameList>
+
+  <ImageList>
+    <Image Name="img:GameLeftPanel" Path="Images/Screens/Screen_01.png" />
+  </ImageList>
+</GUIConfig>

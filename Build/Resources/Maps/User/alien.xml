@@ -1,0 +1,14 @@
+<Map Name="Alien">
+  <ImageFile Source="Alien.png">
+    <Grass R="0" G="128" B="0"/>
+    <Water R="0" G="0" B="255"/>
+    <Rock R="0" G="0" B="0"/>
+    <Desert R="255" G="215" B="0"/>
+    <Swamp R="139" G="0" B="0"/>
+    <Mud R="0" G="139" B="139"/>
+    <Sand R="255" G="255" B="0"/>
+    <Stone R="70" G="70" B="70"/>
+    <Wood R="0" G="70" B="0"/>
+    <Spot R="255" G="0" B="0"/>
+  </ImageFile>
+</Map>

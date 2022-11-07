@@ -1,0 +1,70 @@
+﻿<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp">
+  <head>
+    <link rel="SHORTCUT ICON" href="./../icons/favicon.ico" />
+    <style type="text/css">.OH_CodeSnippetContainerTabLeftActive, .OH_CodeSnippetContainerTabLeft,.OH_CodeSnippetContainerTabLeftDisabled { backgroundImageName: tabLeftBG.gif; }.OH_CodeSnippetContainerTabRightActive, .OH_CodeSnippetContainerTabRight,.OH_CodeSnippetContainerTabRightDisabled { backgroundImageName: tabRightBG.gif; }.OH_footer { backgroundImageName: footer_slice.gif; background-position: top; background-repeat: repeat-x; }</style>
+    <link rel="stylesheet" type="text/css" href="./../styles/branding.css" />
+    <link rel="stylesheet" type="text/css" href="./../styles/branding-en-US.css" />
+    <style type="text/css">
+			body
+			{
+			border-left:5px solid #e6e6e6;
+			overflow-x:scroll;
+			overflow-y:scroll;
+			}
+		</style>
+    <script src="./../scripts/branding.js" type="text/javascript">
+      <!---->
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>BuildingManager Properties</title>
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="BuildingManager class, properties" />
+    <meta name="Microsoft.Help.Id" content="Properties.T:Migration.BuildingManager" />
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    <meta name="BrandingAware" content="'true'" />
+    <meta name="container" content="Migration" />
+    <meta name="file" content="01c5fa3a-7d48-9dfa-1764-a852e2365934" />
+    <meta name="guid" content="01c5fa3a-7d48-9dfa-1764-a852e2365934" />
+    
+    <meta name="SelfBranded" content="true" />
+  </head>
+  <body onload="onLoad()" class="primary-mtps-offline-document">
+    <div class="OH_outerDiv">
+      <div class="OH_outerContent">
+        <table class="TitleTable">
+          <tr>
+            <td class="OH_tdLogoColumn">
+              <img alt="Migration" width="128" height="128" src="./../icons/migration.png" />
+            </td>
+            <td class="OH_tdTitleColumn">BuildingManager Properties</td>
+            <td class="OH_tdRunningTitleColumn">Migration Documented Class Library</td>
+          </tr>
+        </table>
+        <div id="mainSection">
+          <div id="mainBody">
+            <span class="introStyle"></span>The <a href="c8bda099-4665-01e9-a4db-8c6eabdbd3be.htm" target="">BuildingManager</a> type exposes the following members.<div class="OH_CollapsibleAreaRegion"><div class="OH_regiontitle">Properties</div><div class="OH_CollapsibleArea_HrDiv"><hr class="OH_CollapsibleArea_Hr" /></div></div><div class="OH_clear"></div><table id="memberList" class="members"><tr><th class="ps_iconColumn">
+							 
+						</th><th class="ps_nameColumn">Name</th><th class="ps_descriptionColumn">Description</th></tr><tr data="protected;inherited;notNetfw;"><td><img src="./../icons/protproperty.gif" alt="Protected property" title="Protected property" /></td><td><a href="63ad1902-74d0-9e0d-3a16-01c49acdfd8a.htm" target="">CurrentCycle</a></td><td><div class="summary">
+ The current discrete time value. By convention, everwhere else you need a discrete game time,
+ just return this value of the path engine.
+ </div> (Inherited from <a href="e3c92056-b688-2343-1e77-f08d5355064d.htm" target="">SynchronizedManager</a>.)</td></tr><tr data="protected;inherited;notNetfw;"><td><img src="./../icons/protproperty.gif" alt="Protected property" title="Protected property" /></td><td><a href="845f80a1-931c-d48d-b821-cb5115057d2a.htm" target="">CycleResolution</a></td><td><div class="summary">
+ Directly holds the discretization granularity. All movable speeds can only be multiples of
+ this value, but be careful, since performance goes down polynomial (?just a guess) with 
+ increasing resolution.
+ </div> (Inherited from <a href="e3c92056-b688-2343-1e77-f08d5355064d.htm" target="">SynchronizedManager</a>.)</td></tr><tr data="protected;declared;notNetfw;"><td><img src="./../icons/protproperty.gif" alt="Protected property" title="Protected property" /></td><td><a href="601c9fd6-b619-d540-1089-1cb395b895a0.htm" target="">InitialHouseSpaceCount</a></td><td></td></tr><tr data="protected;inherited;notNetfw;"><td><img src="./../icons/protproperty.gif" alt="Protected property" title="Protected property" /></td><td><a href="3be29b3a-e5ed-95d5-5543-19ae6c7e26f3.htm" target="">IsAlignedCycle</a></td><td> (Inherited from <a href="e3c92056-b688-2343-1e77-f08d5355064d.htm" target="">SynchronizedManager</a>.)</td></tr><tr data="protected;declared;notNetfw;"><td><img src="./../icons/protproperty.gif" alt="Protected property" title="Protected property" /></td><td><a href="48b538b9-7cc8-29f7-d14c-78cffb91c33a.htm" target="">Map</a></td><td></td></tr><tr data="protected;declared;notNetfw;"><td><img src="./../icons/protproperty.gif" alt="Protected property" title="Protected property" /></td><td><a href="f919afb1-598a-e41d-247b-4310070a1e20.htm" target="">MoveManager</a></td><td></td></tr><tr data="protected;inherited;notNetfw;"><td><img src="./../icons/protproperty.gif" alt="Protected property" title="Protected property" /></td><td><a href="2f92085b-301b-31fa-4f97-d759973d2173.htm" target="">NextAlignedCycle</a></td><td><div class="summary">
+ The next cycle time aligned to <a href="845f80a1-931c-d48d-b821-cb5115057d2a.htm" target="">CycleResolution</a>. If <a href="63ad1902-74d0-9e0d-3a16-01c49acdfd8a.htm" target="">CurrentCycle</a>
+ is already aligned, the next aligned cycle is still returned.
+ </div> (Inherited from <a href="e3c92056-b688-2343-1e77-f08d5355064d.htm" target="">SynchronizedManager</a>.)</td></tr><tr data="protected;declared;notNetfw;"><td><img src="./../icons/protproperty.gif" alt="Protected property" title="Protected property" /></td><td><a href="8acc52e5-fe45-9ca9-34a0-c5f437002ea5.htm" target="">ResourceManager</a></td><td></td></tr><tr data="protected;inherited;notNetfw;"><td><img src="./../icons/protproperty.gif" alt="Protected property" title="Protected property" /></td><td><a href="6aa57515-ae3c-7db4-cd44-1ed4c09c5730.htm" target="">SyncWith</a></td><td> (Inherited from <a href="e3c92056-b688-2343-1e77-f08d5355064d.htm" target="">SynchronizedManager</a>.)</td></tr><tr data="protected;declared;notNetfw;"><td><img src="./../icons/protproperty.gif" alt="Protected property" title="Protected property" /></td><td><a href="164af0ea-533e-e9d3-e0b8-e4b1c4eea33e.htm" target="">Terrain</a></td><td></td></tr></table><a href="#mainBody" target="">Back to Top</a><a name="seeAlsoSection"><!----></a><div class="OH_CollapsibleAreaRegion"><div class="OH_regiontitle">See Also</div><div class="OH_CollapsibleArea_HrDiv"><hr class="OH_CollapsibleArea_Hr" /></div></div><div class="OH_clear"></div><div class="seeAlsoStyle"><a href="c8bda099-4665-01e9-a4db-8c6eabdbd3be.htm" target="">BuildingManager Class</a></div><div class="seeAlsoStyle"><a href="e87abfca-416f-1adb-46d3-092176271dab.htm" target="">Migration Namespace</a></div></div>
+        </div>
+      </div>
+    </div>
+    <div id="OH_footer" class="OH_footer">
+      <p />
+      <p>
+        <a href="www.arkitechebc.com" target="">Arkitech EBC Corporation (www.arkitechebc.com)</a>
+      </p>
+      <div class="OH_feedbacklink">
+        <a href="mailto:?subject=Migration+Documented+Class+Library+BuildingManager+Properties+100+EN-US&amp;body=Your%20feedback%20is%20used%20to%20improve%20the%20documentation%20and%20the%20product.%20Your%20e-mail%20address%20will%20not%20be%20used%20for%20any%20other%20purpose%20and%20is%20disposed%20of%20after%20the%20issue%20you%20report%20is%20resolved.%20While%20working%20to%20resolve%20the%20issue%20that%20you%20report%2c%20you%20may%20be%20contacted%20via%20e-mail%20to%20get%20further%20details%20or%20clarification%20on%20the%20feedback%20you%20sent.%20After%20the%20issue%20you%20report%20has%20been%20addressed%2c%20you%20may%20receive%20an%20e-mail%20to%20let%20you%20know%20that%20your%20feedback%20has%20been%20addressed.">Send Feedback</a> on this topic.</div>
+    </div>
+  </body>
+</html>

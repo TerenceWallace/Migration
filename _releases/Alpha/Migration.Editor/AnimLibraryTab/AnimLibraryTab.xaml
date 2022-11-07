@@ -1,0 +1,275 @@
+﻿<UserControl x:Class="Migration.Editor.AnimLibraryTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:this="clr-namespace:Migration.Editor"
+             mc:Ignorable="d" 
+             d:DesignHeight="704" d:DesignWidth="1024" MinWidth="1024">
+    <Grid>
+
+        <Grid>
+            <Label Content="Directory:" Height="28" HorizontalAlignment="Left" Margin="96,5,0,0" VerticalAlignment="Top" />
+            <Label Content="{Binding Library.Directory}" Height="28" HorizontalAlignment="Left" Margin="163,5,0,0" VerticalAlignment="Top" />
+            <Button Content="Save" Height="23" HorizontalAlignment="Left" Margin="6,6,0,0" Name="BTN_SaveLibrary" VerticalAlignment="Top" Width="75" />
+        </Grid>
+
+        <Grid Margin="0,35,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <GroupBox Header="Library Navigation:" HorizontalAlignment="Stretch" Margin="6,0,0,0" VerticalAlignment="Stretch">
+                <Grid>
+                    <TabControl>
+                        <TabItem Header="Animations">
+                            <Grid>
+                                <TreeView ItemsSource="{Binding Library.Classes}" Margin="0,30,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" SelectedItemChanged="TreeView_SelectedItemChanged">
+                                    <TreeView.ItemContainerStyle>
+                                        <Style TargetType="{x:Type TreeViewItem}">
+                                            <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
+                                            <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
+                                            <Setter Property="FontWeight" Value="Normal" />
+                                            <Style.Triggers>
+                                                <Trigger Property="IsSelected" Value="True">
+                                                    <Setter Property="FontWeight" Value="Bold" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TreeView.ItemContainerStyle>
+
+                                    <TreeView.ItemTemplate>
+                                        <HierarchicalDataTemplate ItemsSource="{Binding Children}">
+                                            <TextBlock Text="{Binding Name}" />
+                                        </HierarchicalDataTemplate>
+                                    </TreeView.ItemTemplate>
+                                </TreeView>
+                                <Button Content="Show Library Details" Height="23" HorizontalAlignment="Stretch" Margin="6,4,6,0" Name="BTN_ShowLibraryDetails" VerticalAlignment="Top" Click="BTN_ShowLibraryDetails_Click" />
+                            </Grid>
+                        </TabItem>
+
+                        <TabItem Header="Audio">
+                            <Grid>
+                                <Button Content="..." Height="23" HorizontalAlignment="Right" Margin="0,6,6,0" Name="BTN_OpenMusicFile" VerticalAlignment="Top" Width="27" />
+                                <TextBox Height="23" HorizontalAlignment="Stretch" Margin="6,6,39,0" Name="EDIT_AudioPath" VerticalAlignment="Top" />
+                                <Button Content="Add" Height="23" HorizontalAlignment="Left" Margin="6,66,0,0" Name="BTN_AddAudio" VerticalAlignment="Top" Width="75" Click="BTN_AddAudio_Click" />
+                                <Button Content="Remove" Height="23" HorizontalAlignment="Left" Margin="91,66,0,0" Name="BTN_RemoveAudio" VerticalAlignment="Top" Width="75" Click="BTN_RemoveAudio_Click" />
+                                <ScrollViewer Margin="0,95,0,35" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Auto">
+                                    <ListView HorizontalAlignment="Stretch" Name="LIST_AudioObjects" ItemsSource="{Binding Library.AudioObjects}" VerticalAlignment="Stretch">
+                                        <ListView.View>
+                                            <GridView>
+                                                <GridViewColumn Width="30" Header="Used" DisplayMemberBinding="{Binding UsageCount}" />
+                                                <GridViewColumn Width="200" Header="Name" DisplayMemberBinding="{Binding Name}"/>
+                                            </GridView>
+                                        </ListView.View>
+                                    </ListView>
+                                </ScrollViewer>
+                                <Button Content="Play" Height="23" HorizontalAlignment="Left" Margin="6,0,0,0" Name="BTN_Play" VerticalAlignment="Bottom" Width="75" Click="BTN_Play_Click" />
+                                <TextBox Height="23" HorizontalAlignment="Stretch" Margin="50,33,6,0" Name="EDIT_AudioName" VerticalAlignment="Top" Width="116" />
+                                <Label Content="Name:" Height="28" HorizontalAlignment="Left" Margin="6,31,0,0" VerticalAlignment="Top" />
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+            </GroupBox>
+
+            <GridSplitter VerticalAlignment="Stretch" Width="3" Grid.Column="1" HorizontalAlignment="Center"/>
+
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" MinHeight="350"/>
+                    <RowDefinition Height="240" Name="ROW_AnimFrameView"/>
+                </Grid.RowDefinitions>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="400"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TabControl Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <TabItem Header="Animation Preview">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                
+                                <Grid>
+                                    <RadioButton Content="Move" Height="16" HorizontalAlignment="Left" Margin="19,6,0,0" Name="RADIO_AnimMove" VerticalAlignment="Top" Checked="EVENT_UpdateAnimationPlayer" Unchecked="EVENT_UpdateAnimationPlayer"/>
+                                    <RadioButton Content="Z-Plane" Height="16" HorizontalAlignment="Left" Margin="86,6,0,0" Name="RADIO_AnimZPlane" VerticalAlignment="Top" Checked="EVENT_UpdateAnimationPlayer" Unchecked="EVENT_UpdateAnimationPlayer"/>
+                                    <RadioButton Content="Resource:" Height="16" HorizontalAlignment="Left" Margin="219,6,0,0" Name="RADIO_AnimResource" VerticalAlignment="Top" Checked="EVENT_UpdateAnimationPlayer" Unchecked="EVENT_UpdateAnimationPlayer"/>
+                                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="292,1,0,0" Name="COMBO_AnimResource" VerticalAlignment="Top" Width="106" SelectionChanged="EVENT_UpdateAnimationPlayer" />
+                                    <RadioButton Content="Build" Height="16" HorizontalAlignment="Left" Margin="158,6,0,0" Name="RADIO_AnimBuild" VerticalAlignment="Top" Checked="EVENT_UpdateAnimationPlayer" Unchecked="EVENT_UpdateAnimationPlayer"/>
+                                </Grid>
+                                
+                                <Grid Grid.Row="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Slider Orientation="Vertical" Name="SLIDER_AnimZoom" Minimum="0.1" Maximum="10" Value="1" Margin="0,0,0,30" />
+                                    <Button Content="D"  Height="23" HorizontalAlignment="Left" Margin="3,0,0,6" Name="BTN_AnimZoomDefault" VerticalAlignment="Bottom" Width="23" Click="BTN_AnimZoomDefault_Click" />
+
+                                    <WindowsFormsHost Grid.Column="1" Name="HOST_AnimationPlayer" />
+                                </Grid>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Stacks/Plane" Name="TAB_StacksAndPlane">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="200"/>
+                                </Grid.ColumnDefinitions>
+                                <GroupBox Grid.Column="1" Header="Resource Stacks:" Name="GROUP_ResourceStacks">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Grid>
+                                            <Button Content="Remove" Height="23" HorizontalAlignment="Left" Margin="6,6,0,0" Name="BTN_RemoveResource" VerticalAlignment="Top" Width="84" Click="BTN_RemoveResource_Click" />
+                                            <Button Content="Clear" Height="23" HorizontalAlignment="Left" Margin="96,6,0,0" Name="BTN_ClearResources" VerticalAlignment="Top" Width="86" Click="BTN_ClearResources_Click" />
+                                            <ListBox HorizontalAlignment="Stretch" Margin="0,35,0,0" Name="LIST_ResourceStacks" ItemsSource="{Binding CurrentClass.ResourceStacks}" VerticalAlignment="Stretch"  />
+                                        </Grid>
+
+                                        <Grid Grid.Row="1">
+                                            <Button Content="Remove" Height="23" HorizontalAlignment="Left" Margin="6,6,0,0" Name="BTN_RemoveBound" VerticalAlignment="Top" Width="84" Click="BTN_RemoveBound_Click" />
+                                            <Button Content="Clear" Height="23" HorizontalAlignment="Left" Margin="96,6,0,0" Name="BTN_ClearBounds" VerticalAlignment="Top" Width="86" Click="BTN_ClearBoundaries_Click" />
+                                            <ListBox HorizontalAlignment="Stretch" Margin="0,35,0,0" Name="LIST_SolidBoundaries" ItemsSource="{Binding CurrentClass.SolidBoundaries}" VerticalAlignment="Stretch"  />
+                                        </Grid>
+                                    </Grid>
+                                </GroupBox>
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+
+                    <this:Wizard x:Name="WIZARD_Details">
+                        <TabItem Name="TAB_LibDetails">
+                            <Grid>
+                                <Button Content="Create New Class" Height="23" HorizontalAlignment="Left" Margin="15,195,0,0" Name="BTN_CreateClass" VerticalAlignment="Top" Width="130" Click="BTN_CreateClass_Click" />
+                                <Label Content="Statistics:" Height="28" HorizontalAlignment="Left" Margin="21,53,0,0"  VerticalAlignment="Top" />
+                                <Label Content="Class Count:" Height="28" HorizontalAlignment="Left" Margin="42,74,0,0"  VerticalAlignment="Top" />
+                                <Label Content="Animation Set Count:" Height="28" HorizontalAlignment="Left" Margin="42,98,0,0" VerticalAlignment="Top" />
+                                <Label Content="Animation Count:" Height="28" HorizontalAlignment="Left" Margin="42,121,0,0"  VerticalAlignment="Top" />
+                                <Label Content="Frame Count:" Height="28" HorizontalAlignment="Left" Margin="42,146,0,0"  VerticalAlignment="Top" />
+                                <TextBox Height="23" HorizontalAlignment="Left" Margin="160,196,0,0" Name="EDIT_NewClassName" VerticalAlignment="Top" Width="223" />
+                                <Label Content="Animation Library" FontSize="20" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" />
+                                <Rectangle Height="1" HorizontalAlignment="Stretch" Margin="10,180,30,0" Stroke="Gray" VerticalAlignment="Top" />
+                            </Grid>
+                        </TabItem>
+                        <TabItem Name="TAB_ClassDetails">
+                            <Grid>
+                                <Label Content="Animation Class:" FontSize="20" HorizontalAlignment="Left" Margin="6,6,0,0" VerticalAlignment="Top" />
+                                <Label Content="{Binding Name}" FontSize="20" HorizontalAlignment="Left" Margin="170,6,0,0" VerticalAlignment="Top" />
+                                <CheckBox Content="Ambient Animation Set:" HorizontalAlignment="Left" Margin="27,72,0,0" VerticalAlignment="Top" Name="CHECK_UseAmbientSet" Checked="CHECK_UseAmbientSet_Checked" Unchecked="CHECK_UseAmbientSet_Checked" />
+                                <ComboBox Height="23" Name="COMBO_ClassAmbientSet" DisplayMemberPath="Name" ItemsSource="{Binding Sets}" HorizontalAlignment="Left" Margin="189,68,0,0" VerticalAlignment="Top" Width="146" SelectionChanged="COMBO_ClassAmbientSet_SelectionChanged" />
+                                <Button Content="Create New Animation Set:" Height="23" HorizontalAlignment="Left" Margin="24,200,0,0" Name="BTN_CreateSet" VerticalAlignment="Top" Width="160" Click="BTN_CreateSet_Click" />
+                                <TextBox Height="23" Margin="206,200,0,0" Name="EDIT_NewSetName" HorizontalAlignment="Left" VerticalAlignment="Top" Width="178" />
+                                <Button Content="Remove This Class" Height="23" HorizontalAlignment="Left" Margin="27,119,0,0" Name="BTN_RemoveClass" VerticalAlignment="Top" Width="160" Click="BTN_RemoveClass_Click" />
+                                <Button Content="Rename This Class:" Height="23" HorizontalAlignment="Left" Margin="26,148,0,0" Name="BTN_ClassRename" VerticalAlignment="Top" Width="160" Click="BTN_ClassRename_Click" />
+                                <TextBox Height="23" HorizontalAlignment="Left" Margin="206,149,0,0" Name="EDIT_ClassRename" VerticalAlignment="Top" Width="178" Text="{Binding Name, Mode=OneWay}"/>
+                                <Rectangle Height="1" HorizontalAlignment="Stretch" Margin="24,104,16,0" Stroke="Gray" VerticalAlignment="Top"/>
+                                <Rectangle Height="1" HorizontalAlignment="Stretch" Margin="24,187,16,0" Stroke="Gray" VerticalAlignment="Top" />
+                                <Button Content="Import GFX Directed Motion" Height="23" HorizontalAlignment="Left" Margin="24,229,0,0" Name="BTN_GfxImportDirMotion" VerticalAlignment="Top" Width="160" Click="BTN_GfxImportDirMotion_Click" />
+                                <Button Content="Generate Frozen Frames" Height="23" HorizontalAlignment="Left" Margin="206,229,0,0" VerticalAlignment="Top" Width="178" Name="BTN_GenFrozenFrames" Click="BTN_GenFrozenFrames_Click" />
+                            </Grid>
+                        </TabItem>
+                        <TabItem Name="TAB_AnimSetDetails">
+                            <Grid>
+                                <Label Content="Animation Set:" FontSize="20" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" />
+                                <Label Content="{Binding Name}" FontSize="20" HorizontalAlignment="Left" Margin="164,10,0,0" VerticalAlignment="Top" />
+                                <Button Content="Create New Animation" Height="23" HorizontalAlignment="Left" Margin="14,228,0,0" Name="BTN_CreateAnimation" VerticalAlignment="Top" Width="160" Click="BTN_CreateAnimation_Click" />
+                                <TextBox Height="23" HorizontalAlignment="Stretch" Margin="188,228,6,0" Name="EDIT_NewAnimName" VerticalAlignment="Top" />
+                                <Label Content="Duration:" Height="28" HorizontalAlignment="Left" Margin="10,53,0,0"  VerticalAlignment="Top" />
+                                <TextBox Height="23" Text="{Binding DurationMillis}" HorizontalAlignment="Left" Margin="127,55,0,0" VerticalAlignment="Top" Width="120" />
+                                <Button Content="Remove This Set" Height="23" HorizontalAlignment="Left" Margin="14,145,0,0" Name="BTN_RemoveSet" VerticalAlignment="Top" Width="160" Click="BTN_RemoveSet_Click" />
+                                <Button Content="Rename This Set:" Height="23" HorizontalAlignment="Right" Margin="0,174,218,0" Name="BTN_RenameSet" VerticalAlignment="Top" Width="160" Click="BTN_RenameSet_Click" />
+                                <Rectangle Height="1" HorizontalAlignment="Stretch" Margin="10,126,30,0" Stroke="Gray" VerticalAlignment="Top" />
+                                <TextBox Height="23" HorizontalAlignment="Stretch" Margin="188,174,6,0" Name="EDIT_SetRename" Text="{Binding Name, Mode=OneWay}" VerticalAlignment="Top" />
+                                <Rectangle Height="1" HorizontalAlignment="Stretch" Margin="10,211,30,0" Stroke="Gray" VerticalAlignment="Top" />
+                                <Button Content="Import GFX Sequence" Height="23" HorizontalAlignment="Left" Margin="14,257,0,0" Name="BTN_GfxImportSequence" VerticalAlignment="Top" Width="160" Click="BTN_GfxImportSequence_Click" />
+                                <Label Content="Render-Index:" Height="28" HorizontalAlignment="Left" Margin="10,82,0,0" VerticalAlignment="Top" />
+                                <TextBox Height="23" HorizontalAlignment="Left" Margin="127,84,0,0" Text="{Binding RenderIndex}" VerticalAlignment="Top" Width="120" />
+                                <Rectangle Height="1" HorizontalAlignment="Stretch" Margin="10,300,30,0" Stroke="Gray" VerticalAlignment="Top" />
+                                <Label Content="Class-Shift-X:" Height="28" HorizontalAlignment="Left" Margin="14,316,0,0" VerticalAlignment="Top" />
+                                <TextBox Height="23" Text="{Binding Character.ShiftX, Mode=TwoWay}" HorizontalAlignment="Left" Margin="127,316,0,0" VerticalAlignment="Top" Width="120" />
+                                <Label Content="Class-Shift-Y:" Height="28" HorizontalAlignment="Left" Margin="14,341,0,0" VerticalAlignment="Top" />
+                                <TextBox Height="23" Text="{Binding Character.ShiftY, Mode=TwoWay}" HorizontalAlignment="Left" Margin="127,341,0,0" VerticalAlignment="Top" Width="120" />
+                            </Grid>
+                        </TabItem>
+                        <TabItem Name="TAB_AnimDetails">
+                            <Grid>
+
+                                <Label Content="OffsetX:" Height="28" HorizontalAlignment="Left" Margin="17,53,0,0" VerticalAlignment="Top" />
+                                <TextBox Height="23" HorizontalAlignment="Left" Margin="78,54,0,0" Text="{Binding OffsetX}" VerticalAlignment="Top" Width="58" />
+                                <Label Content="OffsetY:" Height="28" HorizontalAlignment="Left" Margin="167,54,0,0" VerticalAlignment="Top" />
+                                <TextBox Height="23" HorizontalAlignment="Left" Margin="233,54,0,0" Text="{Binding OffsetY}" VerticalAlignment="Top" Width="70" />
+                                <CheckBox Content="Is Frozen:" IsChecked="{Binding IsFrozen}" Height="16" HorizontalAlignment="Left" Margin="26,120,0,0"  VerticalAlignment="Top" />
+                                <Button Content="Remove This Animation" Height="23" HorizontalAlignment="Left" Margin="10,280,0,0" Name="BTN_RemoveAnim" VerticalAlignment="Top" Width="181" Click="BTN_RemoveAnim_Click" />
+                                <Button Content="Rename This Animation:" Height="23" HorizontalAlignment="Left" Margin="10,309,0,0" Name="BTN_RenameAnim" VerticalAlignment="Top" Width="181" Click="BTN_RenameAnim_Click" />
+                                <TextBox Height="23" HorizontalAlignment="Left" Margin="199,310,0,0" Name="EDIT_RenameAnim" Text="{Binding Name, Mode=OneWay}" VerticalAlignment="Top" Width="187" />
+
+                                <Grid  IsEnabled="False">
+                                    <CheckBox Content="Play Sound:" IsChecked="{Binding PlaySound}" Height="16" HorizontalAlignment="Left" Margin="26,162,0,0"  VerticalAlignment="Top" />
+                                    <Label Content="Start Delay:" Height="28" HorizontalAlignment="Left" Margin="44,184,0,0"  VerticalAlignment="Top" />
+                                    <ComboBox Height="23" ItemsSource="{Binding Library.AudioObjects}" DisplayMemberPath="Name" SelectedItem="{Binding Sound}" HorizontalAlignment="Left" Margin="134,155,0,0" VerticalAlignment="Top" Width="120" />
+                                    <TextBox Height="23" Text="{Binding SoundStartDelay}" HorizontalAlignment="Left" Margin="134,184,0,0" VerticalAlignment="Top" Width="120" />
+                                    <Label Content="Repeat Delay:" Height="28" HorizontalAlignment="Left" Margin="44,212,0,0" VerticalAlignment="Top" />
+                                    <TextBox Height="23" Text="{Binding SoundRepeatDelay}" HorizontalAlignment="Left" Margin="134,212,0,0"  VerticalAlignment="Top" Width="120" />
+                                    <CheckBox Content="Repeat" IsChecked="{Binding RepeatSound}" Height="16" HorizontalAlignment="Left" Margin="48,246,0,0" VerticalAlignment="Top" />
+                                </Grid>
+
+                                <Label Content="Animation:" FontSize="20" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" />
+                                <Label Content="{Binding Name}" FontSize="20" HorizontalAlignment="Left" Margin="154,10,0,0" VerticalAlignment="Top" />
+                                <Rectangle Height="1" HorizontalAlignment="Stretch" Margin="10,143,30,0" Stroke="Gray" VerticalAlignment="Top" />
+                                <Rectangle Height="1" HorizontalAlignment="Stretch" Margin="10,268,30,0" Stroke="Gray" VerticalAlignment="Top" />
+                                <Label Content="Render-Index:" Height="28" HorizontalAlignment="Left" Margin="17,86,0,0" VerticalAlignment="Top" />
+                                <TextBox Height="23" HorizontalAlignment="Left" Margin="134,88,0,0" Text="{Binding RenderIndex}" VerticalAlignment="Top" Width="169" />
+                                <Button Content="Append GFX Sequence" Height="23" HorizontalAlignment="Left" Margin="202,280,0,0" Name="BTN_GfxAppendSequence" VerticalAlignment="Top" Width="184" Click="BTN_GfxAppendSequence_Click" />
+                            </Grid>
+                        </TabItem>
+                    </this:Wizard>
+                </Grid>
+
+                <GroupBox Grid.Row="1" Header="Animation Editor:" Height="240" HorizontalAlignment="Stretch" Margin="0,0,0,0" Name="GROUP_AnimDetails" VerticalAlignment="Bottom">
+                    <Grid>
+                        <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Hidden" Margin="6,6,0,60">
+                            <ListBox ItemsSource="{Binding Frames}" Name="LIST_AnimFrames" SelectionChanged="LIST_AnimFrames_SelectionChanged">
+                                <ListBox.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel Orientation="Horizontal"/>
+                                    </ItemsPanelTemplate>
+                                </ListBox.ItemsPanel>
+
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border BorderBrush="Gray" Background="GhostWhite" BorderThickness="1" CornerRadius="4" Margin="5" Padding="5">
+                                            <Image Margin="2" Width="100" Height="100" Source="{Binding Source, Converter={StaticResource DrawingToImageSource}}" Stretch="Uniform"/>
+                                        </Border>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </ScrollViewer>
+                        <Button Content="Clear" Height="23" HorizontalAlignment="Left" Margin="329,0,0,31" Name="BTN_Clear" VerticalAlignment="Bottom" Width="124" Click="BTN_Clear_Click" />
+                        <Button Content="Move Left" Height="23" HorizontalAlignment="Left" Margin="6,0,0,6" Name="BTN_MoveLeft" VerticalAlignment="Bottom" Width="93" Click="BTN_MoveLeft_Click" />
+                        <Button Content="Move Right" Height="23" HorizontalAlignment="Left" Margin="105,0,0,6" Name="BTN_MoveRight" VerticalAlignment="Bottom" Width="106" Click="BTN_MoveRight_Click" />
+                        <Button Content="Minimize Bounds" IsEnabled="False" Height="23" HorizontalAlignment="Left" Margin="105,0,0,31" Name="BTN_MinimizeBounds" VerticalAlignment="Bottom" Width="106" Click="BTN_MinimizeBounds_Click" />
+                        <Button Content="Store Atlas PNG" Height="23" HorizontalAlignment="Left" Margin="217,0,0,31" Name="BTN_StoreAtlas" VerticalAlignment="Bottom" Width="106" Click="BTN_StoreAtlas_Click" />
+                        <Button Content="Load Atlas PNG" Height="23" HorizontalAlignment="Left" Margin="217,0,0,6" Name="BTN_LoadAtlas" VerticalAlignment="Bottom" Width="106" Click="BTN_LoadAtlas_Click" />
+                        <Button Content="Remove Duplicates" IsEnabled="False" Height="23" HorizontalAlignment="Left" Margin="329,0,0,6" Name="BTN_RemoveDups" VerticalAlignment="Bottom" Width="124" Click="BTN_RemoveDups_Click" />
+                        <Button Content="Remove Frame" Height="23" HorizontalAlignment="Left" Margin="6,0,0,31" Name="BTN_RemoveFrame" VerticalAlignment="Bottom" Width="93" Click="BTN_RemoveFrame_Click" />
+                        <Label Content="Frame-X:" Height="28" HorizontalAlignment="Left" Margin="467,162,0,0" VerticalAlignment="Top" />
+                        <Label Content="Frame-Y:" Height="28" HorizontalAlignment="Left" Margin="467,187,0,0" VerticalAlignment="Top" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="530,164,0,0" Name="EDIT_FrameX" IsEnabled="False" VerticalAlignment="Top" Width="120" TextChanged="EDIT_FrameX_TextChanged" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="530,189,0,0" Name="EDIT_FrameY" IsEnabled="False" VerticalAlignment="Top" Width="120" TextChanged="EDIT_FrameY_TextChanged"/>
+                    </Grid>
+                </GroupBox>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

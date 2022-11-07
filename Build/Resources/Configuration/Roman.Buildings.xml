@@ -1,0 +1,230 @@
+<?xml version="1.0"?>
+<RaceConfiguration Name="Romans">
+    <Buildables>
+    <BuildingConfiguration Worker="Migrant" TabIndex="1" Class="Waterworks" TypeIndex="1776" MigrantCount="0" Name="Waterworks" Character="Waterworks" NoProductionRange="false" DamageResistance="5" WoodCount="3" StoneCount="4" ProductionTimeMillis="15000">
+      <ResourceStacks>
+        <ResourceStack Type="Water" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+      </ResourceStacks>
+    </BuildingConfiguration>
+
+    <BuildingConfiguration Worker="PickAxe" TabIndex="0" Class="Mine" TypeIndex="1101" MigrantCount="0" Name="IronOreMine" Character="IronOreMine" NoProductionRange="true" DamageResistance="5" WoodCount="4" StoneCount="1" ProductionTimeMillis="15000">
+      <ResourceStacks>
+        <ResourceStack Type="IronOre" TimeOffset="5000" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+        <ResourceStack Type="Fish" TimeOffset="0" CycleCount="2" MaxStackSize="2" QualityIndex="1" Direction="Query" />
+        <ResourceStack Type="Meat" TimeOffset="0" CycleCount="8" MaxStackSize="4" QualityIndex="0" Direction="Query" />
+        <ResourceStack Type="Bread" TimeOffset="0" CycleCount="2" MaxStackSize="2" QualityIndex="2" Direction="Query" />
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+      </ResourceStacks>
+    </BuildingConfiguration>
+    <BuildingConfiguration Worker="PickAxe" TabIndex="0" Class="StoneCutter" TypeIndex="1005" MigrantCount="0" Name="StoneCutter" Character="StoneCutter" NoProductionRange="false" DamageResistance="5" WoodCount="2" StoneCount="3" ProductionTimeMillis="5000">
+      <ResourceStacks>
+        <ResourceStack Type="Stone" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+      </ResourceStacks>
+    </BuildingConfiguration>
+    <BuildingConfiguration Worker="None" TabIndex="3" Class="Home" TypeIndex="1903" MigrantCount="100" Name="BigHouse" Character="BigHouse" NoProductionRange="false" DamageResistance="5" WoodCount="15" StoneCount="24" ProductionTimeMillis="1000">
+      <ResourceStacks>
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+      </ResourceStacks>
+    </BuildingConfiguration>
+    <BuildingConfiguration Worker="Hammer" TabIndex="2" TypeIndex="1203" MigrantCount="0" Name="CartWright" Character="CartWright" NoProductionRange="false" DamageResistance="5" WoodCount="5" StoneCount="7" ProductionTimeMillis="240000">
+      <ResourceStacks>
+        <ResourceStack Type="Timber" TimeOffset="0" CycleCount="0" MaxStackSize="2" QualityIndex="0" Direction="Query" />
+        <ResourceStack Type="Iron" TimeOffset="0" CycleCount="0" MaxStackSize="2" QualityIndex="0" Direction="Query" />
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+      </ResourceStacks>
+    </BuildingConfiguration>
+    <BuildingConfiguration Worker="None" TabIndex="2" TypeIndex="1201" MigrantCount="0" Name="LittleTower" Character="LittleTower" NoProductionRange="false" DamageResistance="5" WoodCount="2" StoneCount="3" ProductionTimeMillis="0">
+      <ResourceStacks>
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+      </ResourceStacks>
+    </BuildingConfiguration>
+    <BuildingConfiguration Worker="None" TabIndex="3" TypeIndex="1905" MigrantCount="0" Name="BigTemple" Character="BigTemple" NoProductionRange="false" DamageResistance="5" WoodCount="8" StoneCount="14" ProductionTimeMillis="0">
+      <ResourceStacks>
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+      </ResourceStacks>
+    </BuildingConfiguration>
+    <BuildingConfiguration Worker="PickAxe" TabIndex="0" Class="Mine" TypeIndex="1103" MigrantCount="0" Name="GoldMine" Character="GoldMine" NoProductionRange="true" DamageResistance="5" WoodCount="5" StoneCount="1" ProductionTimeMillis="15000">
+      <ResourceStacks>
+        <ResourceStack Type="GoldOre" TimeOffset="5000" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+        <ResourceStack Type="Fish" TimeOffset="0" CycleCount="8" MaxStackSize="4" QualityIndex="0" Direction="Query" />
+        <ResourceStack Type="Meat" TimeOffset="0" CycleCount="2" MaxStackSize="2" QualityIndex="1" Direction="Query" />
+        <ResourceStack Type="Bread" TimeOffset="0" CycleCount="2" MaxStackSize="2" QualityIndex="2" Direction="Query" />
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+      </ResourceStacks>
+    </BuildingConfiguration>
+    <BuildingConfiguration Worker="Hammer" TabIndex="2" Class="ToolSmith" TypeIndex="1205" MigrantCount="0" Name="WeaponSmith" Character="WeaponSmith" NoProductionRange="false" DamageResistance="5" WoodCount="5" StoneCount="7" ProductionTimeMillis="30000">
+      <ResourceStacks>
+        <ResourceStack Type="Coal" TimeOffset="3000" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Query" />
+        <ResourceStack Type="Iron" TimeOffset="6000" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Query" />
+        <ResourceStack Type="Bow" TimeOffset="10000" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+        <ResourceStack Type="Sword" TimeOffset="10000" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+        <ResourceStack Type="Spear" TimeOffset="10000" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+      </ResourceStacks>
+    </BuildingConfiguration>
+    <BuildingConfiguration Worker="Hammer" TabIndex="2" TypeIndex="1909" MigrantCount="0" Name="Shipyard" Character="Shipyard" NoProductionRange="false" DamageResistance="5" WoodCount="3" StoneCount="5" ProductionTimeMillis="0">
+      <ResourceStacks>
+        <ResourceStack Type="Timber" TimeOffset="0" CycleCount="0" MaxStackSize="2" QualityIndex="0" Direction="Query" />
+        <ResourceStack Type="Iron" TimeOffset="0" CycleCount="0" MaxStackSize="2" QualityIndex="0" Direction="Query" />
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+      </ResourceStacks>
+    </BuildingConfiguration>
+    <BuildingConfiguration Worker="Axe" TabIndex="1" TypeIndex="1705" MigrantCount="0" Name="Butcher" Character="Butcher" NoProductionRange="false" DamageResistance="5" WoodCount="4" StoneCount="4" ProductionTimeMillis="10000">
+      <ResourceStacks>
+        <ResourceStack Type="Sheep" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Query" />
+        <ResourceStack Type="Meat" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+      </ResourceStacks>
+    </BuildingConfiguration>
+    <BuildingConfiguration Worker="Axe" TabIndex="0" Class="PlantProduce" ClassParameter="Wood:20" TypeIndex="1003" MigrantCount="0" Name="WoodCutter" Character="WoodCutter" NoProductionRange="false" DamageResistance="5" WoodCount="2" StoneCount="2" ProductionTimeMillis="5000">
+      <ResourceStacks>
+        <ResourceStack Type="Wood" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+      </ResourceStacks>
+    </BuildingConfiguration>
+    <BuildingConfiguration Worker="None" TabIndex="3" Class="Market" TypeIndex="1904" MigrantCount="0" Name="Market" Character="Market" NoProductionRange="false" DamageResistance="5" WoodCount="1" StoneCount="3" ProductionTimeMillis="0">
+      <ResourceStacks>
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Query" />
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Query" />
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Query" />
+      </ResourceStacks>
+    </BuildingConfiguration>
+    <BuildingConfiguration Worker="None" TabIndex="2" Class="Barracks" TypeIndex="1202" MigrantCount="0" Name="Barrack" Character="Barrack" NoProductionRange="false" DamageResistance="5" WoodCount="4" StoneCount="5" ProductionTimeMillis="5000">
+      <ResourceStacks>
+        <ResourceStack Type="Sword" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Query" />
+        <ResourceStack Type="Bow" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Query" />
+		    <ResourceStack Type="Spear" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Query" />
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+      </ResourceStacks>
+    </BuildingConfiguration>
+    <BuildingConfiguration Worker="Migrant" TabIndex="1" Class="PlantProduce" ClassParameter="Wine:4" TypeIndex="1707" MigrantCount="0" Name="Winegrower" Character="Winegrower" NoProductionRange="false" DamageResistance="5" WoodCount="4" StoneCount="4" ProductionTimeMillis="5000">
+      <ResourceStacks>
+        <ResourceStack Type="Wine" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+      </ResourceStacks>
+    </BuildingConfiguration>
+    <BuildingConfiguration Worker="None" TabIndex="3" TypeIndex="1908" MigrantCount="0" Name="LittleTemple" Character="LittleTemple" NoProductionRange="false" DamageResistance="5" WoodCount="5" StoneCount="8" ProductionTimeMillis="30000">
+      <ResourceStacks>
+        <ResourceStack Type="Wine" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Query" />
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+      </ResourceStacks>
+    </BuildingConfiguration>
+    <BuildingConfiguration Worker="Migrant" TabIndex="1" TypeIndex="1709" MigrantCount="0" Name="Baker" Character="Baker" NoProductionRange="false" DamageResistance="5" WoodCount="4" StoneCount="5" ProductionTimeMillis="30000">
+      <ResourceStacks>
+        <ResourceStack Type="Corn" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Query" />
+        <ResourceStack Type="Water" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Query" />
+        <ResourceStack Type="Bread" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+      </ResourceStacks>
+    </BuildingConfiguration>
+    <BuildingConfiguration Worker="PickAxe" TabIndex="0" Class="Mine" TypeIndex="1100" MigrantCount="0" Name="CoalMine" Character="CoalMine" NoProductionRange="true" DamageResistance="5" WoodCount="4" StoneCount="1" ProductionTimeMillis="15000">
+      <ResourceStacks>
+        <ResourceStack Type="Fish" TimeOffset="0" CycleCount="2" MaxStackSize="2" QualityIndex="1" Direction="Query" />
+        <ResourceStack Type="Bread" TimeOffset="0" CycleCount="8" MaxStackSize="4" QualityIndex="0" Direction="Query" />
+        <ResourceStack Type="Coal" TimeOffset="5000" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+        <ResourceStack Type="Meat" TimeOffset="0" CycleCount="2" MaxStackSize="2" QualityIndex="2" Direction="Query" />
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+      </ResourceStacks>
+    </BuildingConfiguration>
+    <BuildingConfiguration Worker="None" TabIndex="2" TypeIndex="1204" MigrantCount="0" Name="MiddleTower" Character="MiddleTower" NoProductionRange="false" DamageResistance="5" WoodCount="5" StoneCount="5" ProductionTimeMillis="0">
+      <ResourceStacks>
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+      </ResourceStacks>
+    </BuildingConfiguration>
+    <BuildingConfiguration Worker="Migrant" TabIndex="2" TypeIndex="1910" MigrantCount="0" Name="Sickbay" Character="Sickbay" NoProductionRange="false" DamageResistance="5" WoodCount="3" StoneCount="3" ProductionTimeMillis="0">
+      <ResourceStacks>
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+      </ResourceStacks>
+    </BuildingConfiguration>
+    <BuildingConfiguration Worker="Migrant" TabIndex="1" TypeIndex="1702" MigrantCount="0" Name="JumbuckFarm" Character="JumbuckFarm" NoProductionRange="false" DamageResistance="5" WoodCount="6" StoneCount="6" ProductionTimeMillis="30000">
+      <ResourceStacks>
+        <ResourceStack Type="Sheep" TimeOffset="15000" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+        <ResourceStack Type="Grain" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Query" />
+        <ResourceStack Type="Water" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Query" />
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+      </ResourceStacks>
+    </BuildingConfiguration>
+    <BuildingConfiguration Worker="Migrant" TabIndex="0" TypeIndex="1105" MigrantCount="0" Name="GoldMelt" Character="GoldMelt" NoProductionRange="false" DamageResistance="5" WoodCount="4" StoneCount="6" ProductionTimeMillis="30000">
+      <ResourceStacks>
+        <ResourceStack Type="Gold" TimeOffset="10000" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+        <ResourceStack Type="Coal" TimeOffset="3000" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Query" />
+        <ResourceStack Type="GoldOre" TimeOffset="6000" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Query" />
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+      </ResourceStacks>
+    </BuildingConfiguration>
+    <BuildingConfiguration Worker="Scythe" TabIndex="1" Class="PlantProduce" ClassParameter="Grain:7" TypeIndex="1701" MigrantCount="0" Name="Farm" Character="Farm" NoProductionRange="false" DamageResistance="5" WoodCount="6" StoneCount="6" ProductionTimeMillis="5000">
+      <ResourceStacks>
+        <ResourceStack Type="Grain" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+      </ResourceStacks>
+    </BuildingConfiguration>
+    <BuildingConfiguration Worker="Migrant" TabIndex="1" TypeIndex="1708" MigrantCount="0" Name="WindMill" Character="WindMill" NoProductionRange="false" DamageResistance="5" WoodCount="3" StoneCount="3" ProductionTimeMillis="10000">
+      <ResourceStacks>
+        <ResourceStack Type="Grain" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Query" />
+        <ResourceStack Type="Corn" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+      </ResourceStacks>
+    </BuildingConfiguration>
+    <BuildingConfiguration Worker="Saw" TabIndex="0" TypeIndex="1004" MigrantCount="0" Name="SawMill" Character="SawMill" NoProductionRange="false" DamageResistance="5" WoodCount="3" StoneCount="4" ProductionTimeMillis="15000">
+      <ResourceStacks>
+        <ResourceStack Type="Wood" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Query" />
+        <ResourceStack Type="Timber" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+      </ResourceStacks>
+    </BuildingConfiguration>
+    <BuildingConfiguration Worker="Hammer" TabIndex="0" Class="ToolSmith" TypeIndex="1106" MigrantCount="0" Name="ToolSmith" Character="ToolSmith" NoProductionRange="false" DamageResistance="5" WoodCount="3" StoneCount="5" ProductionTimeMillis="30000">
+      <ResourceStacks>
+        <ResourceStack Type="Coal" TimeOffset="3000" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Query" />
+        <ResourceStack Type="Iron" TimeOffset="6000" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Query" />
+        <ResourceStack Type="Axe" TimeOffset="10000" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+        <ResourceStack Type="Hammer" TimeOffset="10000" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+        <ResourceStack Type="Hook" TimeOffset="10000" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+        <ResourceStack Type="Saw" TimeOffset="10000" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+        <ResourceStack Type="Scythe" TimeOffset="10000" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+        <ResourceStack Type="Shovel" TimeOffset="10000" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+        <ResourceStack Type="PickAxe" TimeOffset="10000" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+      </ResourceStacks>
+    </BuildingConfiguration>
+    <BuildingConfiguration Worker="Hook" TabIndex="1" Class="Angler" TypeIndex="1704" MigrantCount="0" Name="Angler" Character="Angler" NoProductionRange="false" DamageResistance="5" WoodCount="3" StoneCount="2" ProductionTimeMillis="15000">
+      <ResourceStacks>
+        <ResourceStack Type="Fish" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+      </ResourceStacks>
+    </BuildingConfiguration>
+    <BuildingConfiguration Worker="None" TabIndex="3" Class="Home" TypeIndex="1901" MigrantCount="10" Name="LittleHouse" Character="LittleHouse" NoProductionRange="false" DamageResistance="5" WoodCount="2" StoneCount="3" ProductionTimeMillis="2000">
+      <ResourceStacks>
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+      </ResourceStacks>
+    </BuildingConfiguration>
+    <BuildingConfiguration Worker="Migrant" TabIndex="0" TypeIndex="1104" MigrantCount="0" Name="IronMelt" Character="IronMelt" NoProductionRange="false" DamageResistance="5" WoodCount="4" StoneCount="6" ProductionTimeMillis="30000">
+      <ResourceStacks>
+        <ResourceStack Type="Iron" TimeOffset="10000" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+        <ResourceStack Type="Coal" TimeOffset="3000" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Query" />
+        <ResourceStack Type="IronOre" TimeOffset="6000" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Query" />
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+      </ResourceStacks>
+    </BuildingConfiguration>
+    <BuildingConfiguration Worker="None" TabIndex="3" Class="Home" TypeIndex="1902" MigrantCount="30" Name="MiddleHouse" Character="MiddleHouse" NoProductionRange="false" DamageResistance="5" WoodCount="5" StoneCount="8" ProductionTimeMillis="1500">
+      <ResourceStacks>
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+      </ResourceStacks>
+    </BuildingConfiguration>
+
+    <BuildingConfiguration Worker="None" TabIndex="3" TypeIndex="1907" MigrantCount="0" Name="Harbour" Character="Harbour" NoProductionRange="false" DamageResistance="5" WoodCount="2" StoneCount="4" ProductionTimeMillis="0">
+      <ResourceStacks>
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Query" />
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Query" />
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Query" />
+      </ResourceStacks>
+    </BuildingConfiguration>
+
+    <BuildingConfiguration Worker="None" TabIndex="2" TypeIndex="1206" MigrantCount="0" Name="Castle" Character="Castle" NoProductionRange="false" DamageResistance="5" WoodCount="8" StoneCount="12" ProductionTimeMillis="0">
+      <ResourceStacks>
+        <ResourceStack Type="Max" TimeOffset="0" CycleCount="0" MaxStackSize="8" QualityIndex="0" Direction="Provider" />
+      </ResourceStacks>
+    </BuildingConfiguration>
+  </Buildables>
+</RaceConfiguration>
