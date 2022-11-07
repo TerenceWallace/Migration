@@ -1,9 +1,0 @@
-﻿<Application x:Class="Migration.Editor.App"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:this="clr-namespace:Migration.Editor"
-             StartupUri="MainWindow.xaml">
-    <Application.Resources>
-        <this:DrawingToImageSource x:Key="DrawingToImageSource"/>
-    </Application.Resources>
-</Application>
